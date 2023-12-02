@@ -56,15 +56,22 @@ static int	get_parts(char **tab, char const *s, char c)
 	return (1);
 }
 
+static void	*free_clean(char *cleanstr, char **tab)
+{
+	free(cleanstr);
+	free(tab);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	*cleanstr;
-	char	*cleaner[2];
 	int		parts;
 	char	**tab;
+	char	cleaner[2];
 
 	cleaner[0] = c;
-	cleaner[1] = 0
+	cleaner[1] = 0;
 	cleanstr = ft_strtrim(s, cleaner);
 	if (!cleanstr)
 		return (NULL);
@@ -76,11 +83,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	}
 	if (!get_parts(tab, cleanstr, c))
-	{
-		free(cleanstr);
-		free(tab);
-		return (NULL);
-	}
+		free_clean(cleanstr, tab);
 	tab[parts] = NULL;
 	free(cleanstr);
 	return (tab);

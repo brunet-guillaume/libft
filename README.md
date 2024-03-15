@@ -1,3 +1,4 @@
 # Libft
-> [!NOTE]
-> 125/100
+{{% alert title="Note" color="primary" %}}
+125/100
+{{% /alert %}}

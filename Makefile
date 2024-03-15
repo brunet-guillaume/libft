@@ -2,7 +2,13 @@ NAME = libft.a
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+INCLUDES = includes
+
+CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES)
+
+SRC_DIR = sources/
+
+OBJ_DIR = objects/
 
 SOURCES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
@@ -16,29 +22,31 @@ BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
 		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-ALLSRCS = $(SOURCES) $(BONUS)
+SRC = $(addprefix $(SRC_DIR), $(SOURCES))
 
-OBJECTS = $(SOURCES:.c=.o)
+ALLSRC = $(addprefix $(SRC_DIR), $(SOURCES)) $(addprefix $(SRC_DIR), $(BONUS))
 
-ALLOBJS = $(ALLSRCS:.c=.o)
+OBJ = $(SRC:.c=.o)
+
+ALLOBJ = $(ALLSRC:.c=.o)
 
 %.o : %.c
 		$(CC) -c $(CFLAGS) $< -o $@ -I ./
 
 .PHONY : all clean fclean re bonus
 
-$(NAME) : $(OBJECTS)
-		ar rc $(NAME) $(OBJECTS)
+$(NAME) : $(OBJ)
+		ar rc $(NAME) $(OBJ)
 
 all : $(NAME)
 
 clean :
-		$(RM) $(ALLOBJS)
+	$(RM) -rf $(OBJ_DIR)
 
 fclean : clean
-		$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re : fclean all
 
-bonus : $(ALLOBJS)
-		ar rc $(NAME) $(ALLOBJS)
+bonus : $(ALLOBJ)
+		ar rc $(NAME) $(ALLOBJ)

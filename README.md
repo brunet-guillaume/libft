@@ -154,7 +154,7 @@ typedef struct s_list
 ```
 The functions :
 
-<table style="text-align:center;">
+<table>
     <tr>
         <td width="150">
             lstadd_back

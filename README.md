@@ -131,9 +131,9 @@ The idea here, is to recode several functions from the C standard library :
     </tr>
     <tr>
         <td>
+            toupper
         </td>
         <td>
-            toupper
         </td>
         <td>
         </td>

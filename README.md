@@ -1,5 +1,6 @@
 # Libft (42 school)
-> ✅ &ensp;**125**/100
+> [Subject](//content/editing-an-existing-page) <br />
+✅ &ensp;**125**/100
 
 First project in 42 school.
 

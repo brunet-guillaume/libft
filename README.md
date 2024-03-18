@@ -1,5 +1,5 @@
 # Libft (42 school)
-> [Subject](/subject/subject_libft.pdf) <br />
+> 📑 &ensp;Subject [here](/subject/subject_libft.pdf) <br />
 ✅ &ensp;**125**/100
 
 First project in 42 school.

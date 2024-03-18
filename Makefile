@@ -6,7 +6,7 @@
 #    By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/15 16:51:57 by gbrunet           #+#    #+#              #
-#    Updated: 2024/03/15 17:59:14 by gbrunet          ###   ########.fr        #
+#    Updated: 2024/03/18 17:44:13 by gbrunet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,8 @@ COMPTEUR = 0
 
 .PHONY : all clean fclean re bonus
 
-$(NAME) : message $(OBJ)
+$(NAME) : $(OBJ)
+	@make info | grep -v directory
 	@ar rc $(NAME) $(OBJ)
 	@echo "$(_GREEN)$(NAME) created$(_END)"
 	@printf "\e[?25h"
@@ -90,13 +91,15 @@ fclean :
 re : fclean all
 
 _BONUS : $(ALLOBJ)
+	@make info | grep -v directory
 	@ar rc $(NAME) $(ALLOBJ)
 	@echo "$(_GREEN)$(NAME) created$(_END)"
 	@printf "\e[?25h"
 
-message :
-	@printf "\t┌────────────────────────────────────────┐"
-	@printf "\n\t\t        $(_CYAN)$(_THIN)Coded by $(_END)$(_CYAN)$(_BOLD)guillaume brunet$(_END)\n"
-	@printf "\t$(_RED)Don't copy$(_END)$(_RED)$(_THIN), "
-	@printf "$(_RED)$(_BOLD)learn$(_END)$(_RED)$(_THIN), you'll be "
-	@printf "$(_RED)$(_BOLD)better.$(_END)\n\n\n"
+info :
+	@printf "\t$(_PURPLE)╭──────────────────────────────────────╮"
+	@printf "\n\t│$(_END)  👾  $(_CYAN)$(_THIN)Coded by $(_END)$(_CYAN)"
+	@printf "$(_BOLD)guillaume brunet$(_END)$(_PURPLE)       │\n"
+	@printf "\t│$(_END)  💬  $(_RED)$(_BOLD)Do not copy$(_END)$(_RED)$(_THIN), "
+	@printf "$(_END)$(_RED)this is useless...$(_END) $(_PURPLE)│\n"
+	@printf "\t╰──────────────────────────────────────╯\n$(_END)"

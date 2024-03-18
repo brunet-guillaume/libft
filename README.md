@@ -191,3 +191,8 @@ The functions :
 </table>
 
 ### Compilation
+```bash
+git clone https://gitlab.com/uotiug42/libft.git
+cd libft
+make
+```

@@ -40,7 +40,7 @@ The functions :
 <table>
     <tr><td width="150">lstadd_back</td><td width="150">lstadd_front</td><td width="150">lstclear</td></tr>
     <tr><td>lstdelone</td><td>lstiter</td><td>lstlast</td></tr>
-    <tr><td>lstmap</td><td>stnew</td><td>lstsize</td></tr>
+    <tr><td>lstmap</td><td>lstnew</td><td>lstsize</td></tr>
 </table>
 
 ### Compilation

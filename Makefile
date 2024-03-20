@@ -67,7 +67,7 @@ COMPTEUR = 0
 .PHONY : all clean fclean re bonus
 
 $(NAME) : $(OBJ)
-	@make info | grep -v directory
+	@make info --no-print-directory
 	@ar rc $(NAME) $(OBJ)
 	@echo "$(_GREEN)$(NAME) created$(_END)"
 	@printf "\e[?25h"
@@ -91,7 +91,7 @@ fclean :
 re : fclean all
 
 _BONUS : $(ALLOBJ)
-	@make info | grep -v directory
+	@make info --no-print-directory
 	@ar rc $(NAME) $(ALLOBJ)
 	@echo "$(_GREEN)$(NAME) created$(_END)"
 	@printf "\e[?25h"

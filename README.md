@@ -45,7 +45,7 @@ The functions :
 
 ### Compilation
 ```bash
-git clone https://gitlab.com/uotiug42/libft.git
+git clone https://gitlab.com/uotiug42/unix/libft.git
 cd libft
 # mandatory part :
 make
